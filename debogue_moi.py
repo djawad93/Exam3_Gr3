@@ -8,10 +8,10 @@ def ajouter_apres_dernier(calendrier: dict, nom: str, duree: str) -> str:
     :param duree: durée du nouveau rendez-vous
     :return: une confirmation avec l'heure du nouveau rendez-vous
     """
-    dernier_rv = calendrier[-1]
+    dernier_rv = calendrier[nom]
 
-    h = datetime.datetime.strptime(dernier_rv[0], "%h:%m")
-    d = datetime.timedelta(minutes=dernier_rv[1])
+    h = datetime.datetime.strptime(dernier_rv[nom], "%h:%m")
+    d = datetime.timedelta(minutes=dernier_rv[nom])
 
     nouveau_debut = h + d + 15
 
